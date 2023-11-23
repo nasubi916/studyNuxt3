@@ -1,18 +1,22 @@
 <template>
   <div>
-    <p class="text-red-700">
+    <div class="text-red-700">
       Home
-      {{ count }}
-      <span class="bg-blue-700  p-1 aspect-square w-max h-max">
-        <button @click="increment()">
-          +
-        </button>
-      </span>
-    </p>
+      {{ count + " " + double }}
+      <button @click="increment()">
+        <div class="bg-blue-700 p-3 aspect-square w-max h-max">
+        </div>
+      </button>
+    </div>
+    <Accordion :ui="ui" />
   </div>
 </template>
 
 <script setup lang="ts">
-const { increment } = useCounterStore();
-const { count } = storeToRefs(useCounterStore());
+const store = useCounterStore();
+const { increment } = store;
+const { count, double } = storeToRefs(store);
+const ui = /* ui */ {
+  background: "bg-white dark-bg-slate-800",
+};
 </script>

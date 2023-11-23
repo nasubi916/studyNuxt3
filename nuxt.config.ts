@@ -4,13 +4,16 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     "@nuxt/devtools",
-    "@nuxtjs/eslint-module",
     "@nuxtjs/tailwindcss",
-    "@pinia/nuxt"
+    "@nuxtjs/color-mode",
+    "@nuxt/ui",
+    "@pinia/nuxt",
+    "@nuxtjs/eslint-module"
   ],
   eslint: {
     cache: false,
-    include: ["src/**/*.{js,jsx,ts,tsx,vue}"]
+    include: ["src/**/*.{js,jsx,ts,tsx,vue}"],
+    eslintPath: "eslint",
   },
   typescript: {
     shim: false,
@@ -22,5 +25,9 @@ export default defineNuxtConfig({
     configPath: "./tailwind.config",
     config: {},
     viewer: true
+  },
+  ui: {
+    global: true,
+    icons: ["mdi", "simple-icons"]
   }
 });
