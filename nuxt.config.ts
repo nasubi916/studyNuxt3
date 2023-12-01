@@ -1,19 +1,17 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   srcDir: "src",
   devtools: { enabled: true },
   modules: [
     "@nuxt/devtools",
+    "@pinia/nuxt",
+    "@nuxt/ui",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/color-mode",
-    "@nuxt/ui",
-    "@pinia/nuxt",
     "@nuxtjs/eslint-module"
   ],
   eslint: {
     cache: false,
-    include: ["src/**/*.{js,jsx,ts,tsx,vue}"],
-    eslintPath: "eslint",
+    eslintPath: "./eslintrc.js",
   },
   typescript: {
     shim: false,
@@ -25,9 +23,5 @@ export default defineNuxtConfig({
     configPath: "./tailwind.config",
     config: {},
     viewer: true
-  },
-  ui: {
-    global: true,
-    icons: ["mdi", "simple-icons"]
   }
 });

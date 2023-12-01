@@ -8,7 +8,6 @@
         </div>
       </button>
     </div>
-    <Accordion :ui="ui" />
   </div>
 </template>
 
@@ -16,7 +15,4 @@
 const store = useCounterStore();
 const { increment } = store;
 const { count, double } = storeToRefs(store);
-const ui = /* ui */ {
-  background: "bg-white dark-bg-slate-800",
-};
 </script>
